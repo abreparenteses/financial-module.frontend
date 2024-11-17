@@ -2,14 +2,36 @@
 
 ## Description
 
-The project aims to assist new students entering the field of Information Technology (IT) by providing a comprehensive guide that covers various areas within this rapidly expanding domain. As technology evolves, students often face uncertainty regarding which career path to pursue and what initial steps to take to achieve their goals. This guide serves as a supportive resource to help them navigate their options and make informed decisions, rather than dictating their success. It will cover a wide range of relevant topics for beginners in IT, from basic concepts to emerging trends and best practices.
+This project is an integration of [financial-module.backend](https://github.com/abreparenteses/financial-module.backend) to provide fully responsive content for financial education - managing accounts payable.
 
 ## Project structure
 
-The project is built using ClojureScript. You can access our [hosted version](https://financial-module.github.io/) to see your content. If you want to publish a content, you can easily:
-- Modify `public/json/data.json` to put your URL content or;
-- Host your content right here at `public/md/title.mdx` with pure markdown;
+The project is built using ClojureScript. To use you first need to install dependencies:
+```bash
+npm i
+```
 
-Feel free to use as you want!
+To start the project:
+```bash
+npm run dev
+```
 
-To host by yourself you can check [lambda-content](https://github.com/financial-module/lambda-content). 
+### After running `npm run dev`
+App available at http://localhost:8200
+Dev tools available at http://localhost:8300
+nREPL available at port 8777
+
+## How to use
+
+You can provide any username and password. A new token will be returned from backend (be sure to have it running).
+
+After that, you can start adding new accounts payable, editing and deleting them.
+
+## Related
+
+### Official Template
+- [lanjoni/helix-refx-tailwind-example](https://github.com/lanjoni/helix-refx-tailwind-example)
+
+## License
+This is free and unencumbered software released into the public domain.  
+For more information, please refer to <http://unlicense.org>
