@@ -5,10 +5,12 @@
             [reitit.frontend.controllers :as rfc]
             [reitit.frontend.easy :as rfe]))
 
-(def ->local-store (after session->local-store))
+(def ->local-store 
+  (after session->local-store))
 
-(def session-interceptors [(path :session)
-                           ->local-store])
+(def session-interceptors 
+  [(path :session)
+   ->local-store])
 
 (refx/reg-fx
  :push-state
