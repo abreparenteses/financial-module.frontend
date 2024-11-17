@@ -1,13 +1,14 @@
 (ns financial-module.core
-  (:require ["react-dom/client" :as react-dom-client]
-            [helix.core :refer [$ defnc]]
-            [refx.alpha :as refx]
-            [reitit.coercion.spec :as rss]
-            [reitit.frontend :as rf]
-            [reitit.frontend.easy :as rfe]
-            [financial-module.events]
-            [financial-module.subs]
-            [financial-module.routes :as routes]))
+  (:require
+   ["react-dom/client" :as react-dom-client]
+   [financial-module.events]
+   [financial-module.routes :as routes]
+   [financial-module.subs]
+   [helix.core :refer [$ defnc]]
+   [refx.alpha :as refx]
+   [reitit.coercion.spec :as rss]
+   [reitit.frontend :as rf]
+   [reitit.frontend.easy :as rfe]))
 
 (defn on-navigate [new-match]
   (when new-match
@@ -15,14 +16,14 @@
 
 (def router
   (rf/router
-   routes/routes
-   {:data {:coercion rss/coercion}}))
+    routes/routes
+    {:data {:coercion rss/coercion}}))
 
 (defn init-routes! []
   (rfe/start!
-   router
-   on-navigate
-   {:use-fragment true}))
+    router
+    on-navigate
+    {:use-fragment true}))
 
 (defnc router-component [{:keys [_]}]
   (let [current-route (refx/use-sub [:current-route])]

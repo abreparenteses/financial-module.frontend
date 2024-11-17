@@ -1,6 +1,7 @@
 (ns financial-module.infra.session
-  (:require [financial-module.infra.http :as http]
-            [refx.alpha :as refx]))
+  (:require
+   [financial-module.infra.http :as http]
+   [refx.alpha :as refx]))
 
 (defn update-session [{:keys [username password]}]
   (-> (http/request! {:path "login"
